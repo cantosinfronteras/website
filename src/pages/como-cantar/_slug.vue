@@ -2,7 +2,7 @@
     <article class="article">
         <h1>{{ article.title }}</h1>
         <div class="content" v-html="article.content"></div>
-        <div class="fb-comments" :data-href="url" data-width="" data-numposts="5"></div>
+        <div class="fb-comments flex justify-center mt-8" :data-href="url" data-width="" data-numposts="5"></div>
     </article>
 </template>
 
@@ -33,7 +33,7 @@ export default {
     },
     data(){
         return {
-            url: location.href
+            url: null
         }
     },
     head(){
@@ -45,7 +45,10 @@ export default {
                 new OpenGraphMeta('image', this.article.featured_image)
             ]
         }
-    }
+    },
+    mounted(){
+        this.url = location.href
+    },
 }
 </script>
 
