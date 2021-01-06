@@ -1,0 +1,9 @@
+type Article @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  slug: String
+  content: String
+  creation_date: AWSDate
+  featured_image: String
+}
+ 

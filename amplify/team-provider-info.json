@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cantosinfronteras-staging-175424-authRole",
+      "UnauthRoleArn": "arn:aws:iam::818281946331:role/amplify-cantosinfronteras-staging-175424-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::818281946331:role/amplify-cantosinfronteras-staging-175424-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-cantosinfronteras-staging-175424-deployment",
+      "UnauthRoleName": "amplify-cantosinfronteras-staging-175424-unauthRole",
+      "StackName": "amplify-cantosinfronteras-staging-175424",
+      "StackId": "arn:aws:cloudformation:us-east-2:818281946331:stack/amplify-cantosinfronteras-staging-175424/36f3d930-5048-11eb-a67f-0aa099ed50dc",
+      "AmplifyAppId": "d8l6i8wy194r2"
+    }
+  }
+}

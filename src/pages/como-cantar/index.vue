@@ -4,40 +4,22 @@
             <span class="font-bold text-4xl">Cómo cantar</span>
             <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
         </div>
-        <x-article v-for="post in posts" :key="post.id" :data="post" />
+        <x-article v-for="article in articles" :key="article.id" :data="article" />
     </div>
 </template>
 
 <script>
+import { DataStore } from 'aws-amplify'
+import { Article } from '../../models'
+
 export default {
-    data() {
-        return {
-            posts: [
-                {
-                    id: 0,
-                    title: 'Cómo cantar afinado',
-                    slug: 'afinado',
-                    extract: 'El proceso de cantar requiere de la activación y coordinación de diversos mecanismos internos en nuestro cuerpo. El canto comienza con un pensamiento, una intención de cantar…'
-                },
-                {
-                    id: 1,
-                    title: 'Cómo cantar afinado',
-                    slug: 'afinado',
-                    extract: 'El proceso de cantar requiere de la activación y coordinación de diversos mecanismos internos en nuestro cuerpo. El canto comienza con un pensamiento, una intención de cantar…'
-                },
-                {
-                    id: 2,
-                    title: 'Cómo cantar afinado',
-                    slug: 'afinado',
-                    extract: 'El proceso de cantar requiere de la activación y coordinación de diversos mecanismos internos en nuestro cuerpo. El canto comienza con un pensamiento, una intención de cantar…'
-                },
-                {
-                    id: 3,
-                    title: 'Cómo cantar afinado',
-                    slug: 'afinado',
-                    extract: 'El proceso de cantar requiere de la activación y coordinación de diversos mecanismos internos en nuestro cuerpo. El canto comienza con un pensamiento, una intención de cantar…'
-                },
-            ]
+    async asyncData({ error }){
+        try {
+            const articles = await DataStore.query(Article)
+            console.log('articles', articles)
+            return { articles }
+        } catch (err) {
+            return error({ statusCode: 500, message: 'Internal server error.' })
         }
     },
 }

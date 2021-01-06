@@ -8,6 +8,12 @@ export default {
     server: {
         host: '0.0.0.0'
     },
+    plugins: [
+        '~/plugins/amplify'
+    ],
+    build: {
+        transpile: ['aws-amplify']
+    },
     googleFonts: {
         families: {
             Inter: [400, 500, 600, 700, 800]

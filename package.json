@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "@nuxt/content": "^1.11.1",
+        "aws-amplify": "^3.3.13",
         "nuxt": "^2.14.12"
     },
     "devDependencies": {
